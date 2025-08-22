@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   # Configure automated TLS acquisition/renewal
   security.acme = {

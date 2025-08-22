@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   # Time zone
   time.timeZone = "Europe/London";

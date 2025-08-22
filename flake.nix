@@ -14,9 +14,8 @@
   outputs = { self, nixpkgs-unstable, agenix, deploy-rs }:
     let
       root_domain = "spyhoodle.me";
-      hostname = "jet";
-      hostgroup = "echo";
-      tailnet = "clicks.domains";
+      hostname = "phobos";
+      tailnet = "mermaid-elevator.ts.net";
       system = "aarch64-linux";
       pkgs = import nixpkgs-unstable {
         inherit system;
@@ -33,12 +32,10 @@
           inherit pkgs;
           specialArgs = {
             inherit hostname;
-            inherit hostgroup;
-            inherit tailnet;
             domains = {
               root = "${root_domain}";
               git = "git.${root_domain}";
-              ssh = "${hostname}.${hostgroup}.${tailnet}";
+              ssh = "${hostname}.${tailnet}";
               auth = "auth.${root_domain}";
               notes = "notes.${root_domain}";
             };
@@ -88,7 +85,7 @@
       };
 
       deploy.nodes.${hostname} = {
-        hostname = "${hostname}.${hostgroup}.${tailnet}";
+        hostname = "${hostname}.${tailnet}";
         profiles.system = {
           user = "root";
           path = deploy-rs.lib.${system}.activate.nixos self.nixosConfigurations.${hostname};

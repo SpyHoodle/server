@@ -1,7 +1,7 @@
-{ config, pkgs, domains, ... }:
+{ domains, ... }:
 
 let
-  clientConfig = { 
+  clientConfig = {
     "m.homeserver".base_url = "https://${domains.root}";
     "org.matrix.msc2965.authentication" = {
       "issuer" = "https://${domains.auth}";

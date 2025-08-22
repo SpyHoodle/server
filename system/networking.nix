@@ -1,4 +1,4 @@
-{ config, lib, hostname, ... }:
+{ lib, hostname, ... }:
 
 {
   # Disable DHCP
@@ -9,7 +9,7 @@
 
   # Disable wireless support & configuration
   networking.wireless.enable = false;
-  
+
   # Configure a static ip address
   networking.interfaces.end0.ipv4.addresses = [
     {

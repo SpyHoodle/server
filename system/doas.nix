@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   security.sudo.enable = false;
   security.doas = {

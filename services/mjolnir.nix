@@ -1,4 +1,4 @@
-{ config, pkgs, domains, ... }:
+{ config, domains, ... }:
 
 {
   services.mjolnir = {
